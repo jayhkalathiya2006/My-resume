@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Unbounded", "Instrument Sans", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-paper: #f1f2ff;
+  --color-paper-2: #e3e5fb;
+  --color-ink: #0e1030;
+  --color-ink-soft: #4a4e78;
+  --color-volt: #2f2bff;
+  --color-volt-deep: #1d19c9;
+  --color-sun: #ffd60a;
+  --color-pop: #ff5ca8;
+}
+
+:root {
+  --color-paper: #f1f2ff;
+  --color-paper-2: #e3e5fb;
+  --color-ink: #0e1030;
+  --color-ink-soft: #4a4e78;
+  --color-volt: #2f2bff;
+  --color-volt-deep: #1d19c9;
+  --color-sun: #ffd60a;
+  --color-pop: #ff5ca8;
+  --font-sans: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Unbounded", "Instrument Sans", sans-serif;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis [data-lenis-prevent],
+.lenis [data-lenis-prevent-wheel],
+.lenis [data-lenis-prevent-touch] {
+  overscroll-behavior: contain;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: clip;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+@media (pointer: fine) {
+  html.has-cursor,
+  html.has-cursor a,
+  html.has-cursor button,
+  html.has-cursor [role="button"] {
+    cursor: none;
+  }
+  html.has-cursor input,
+  html.has-cursor textarea {
+    cursor: text;
+  }
+}
+
+::selection {
+  background: var(--color-pop);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-pop);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-paper);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-volt);
+  border: 2px solid var(--color-paper);
+  border-radius: 999px;
+}
+
+.outline-text {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px currentColor;
+}
+
+.layer {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 14s linear infinite;
+}

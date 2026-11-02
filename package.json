@@ -1,0 +1,16 @@
+{
+  "name": "jay-portfolio-monorepo",
+  "version": "1.0.0",
+  "description": "Portfolio for Jay H. Kalathiya — Flutter Developer | Mobile Application Developer",
+  "scripts": {
+    "dev": "npm run dev:client",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "dev:all": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "start": "cd server && npm start",
+    "build": "cd client && npm run build"
+  },
+  "keywords": ["flutter", "dart", "portfolio", "react", "mobile-developer"],
+  "author": "Jay H. Kalathiya",
+  "license": "ISC"
+}

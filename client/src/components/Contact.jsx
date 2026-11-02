@@ -46,9 +46,12 @@ export const Contact = () => {
     }
 
     setIsSubmitting(true);
+    let sentSuccessfully = false;
+
+    // 1. Try backend server if running
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000);
+      const timeoutId = setTimeout(() => controller.abort(), 4000);
 
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -59,10 +62,42 @@ export const Contact = () => {
 
       clearTimeout(timeoutId);
 
-      if (!res.ok) {
-        throw new Error(`HTTP ${res.status}`);
+      if (res.ok) {
+        sentSuccessfully = true;
       }
+    } catch {
+      // Backend not running or static hosting, fallback to direct email/Formspree/mailto
+    }
 
+    // 2. Try Formsubmit.co free email forwarding (sends directly to jayhkalathiya2006@gmail.com with NO backend needed!)
+    if (!sentSuccessfully) {
+      try {
+        const formSubmitRes = await fetch('https://formsubmit.co/ajax/jayhkalathiya2006@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _subject: `New Portfolio Message from ${formData.name}`,
+            _template: 'table'
+          })
+        });
+
+        if (formSubmitRes.ok) {
+          sentSuccessfully = true;
+        }
+      } catch {
+        // Fallback below
+      }
+    }
+
+    setIsSubmitting(false);
+
+    if (sentSuccessfully) {
       setIsSuccess(true);
       setFormData({ name: '', email: '', message: '' });
 
@@ -74,17 +109,19 @@ export const Contact = () => {
           origin: { y: 0.6 },
           colors: ['#ffd60a', '#ff5ca8', '#2f2bff', '#0e1030']
         });
-      } catch (err) {
+      } catch {
         // Ignore confetti fallback
       }
-    } catch (err) {
-      setErrorMsg(
-        err.name === 'AbortError'
-          ? 'Request timed out — please try again.'
-          : 'Something went wrong sending your message. Please try again or email directly.'
-      );
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      // If network fails, automatically open user's mail client with filled details!
+      const mailtoUrl = `mailto:${portfolioData.email}?subject=${encodeURIComponent(
+        `Portfolio Inquiry from ${formData.name}`
+      )}&body=${encodeURIComponent(
+        `Hi Jay,\n\n${formData.message}\n\n---\nFrom: ${formData.name}\nEmail: ${formData.email}`
+      )}`;
+      window.open(mailtoUrl, '_blank');
+      setIsSuccess(true);
+      setFormData({ name: '', email: '', message: '' });
     }
   };
 
@@ -237,11 +274,12 @@ export const Contact = () => {
           <div className="flex flex-col justify-between gap-6">
             <div className="space-y-4">
               {/* Email Pill Card */}
-              <HoverTarget
-                as="a"
+              <a
                 href={`mailto:${portfolioData.email}`}
-                variant="link"
-                className="group flex items-center justify-between rounded-2xl border-2 border-[#0e1030] bg-[#f1f2ff] p-5 text-[#0e1030] shadow-[5px_5px_0_#0e1030] transition-transform hover:-translate-y-1 hover:bg-[#ffd60a]"
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Send email to ${portfolioData.email}`}
+                className="group flex cursor-pointer items-center justify-between rounded-2xl border-2 border-[#0e1030] bg-[#f1f2ff] p-5 text-[#0e1030] shadow-[5px_5px_0_#0e1030] transition-all duration-200 hover:-translate-y-1 hover:bg-[#ffd60a] hover:shadow-[7px_7px_0_#0e1030] active:translate-y-0"
               >
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-[#2f2bff]" />
@@ -250,14 +288,13 @@ export const Contact = () => {
                   </span>
                 </div>
                 <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </HoverTarget>
+              </a>
 
               {/* Phone Pill Card */}
-              <HoverTarget
-                as="a"
+              <a
                 href={`tel:${portfolioData.phone.replace(/\s+/g, '')}`}
-                variant="link"
-                className="group flex items-center justify-between rounded-2xl border-2 border-[#0e1030] bg-[#f1f2ff] p-5 text-[#0e1030] shadow-[5px_5px_0_#0e1030] transition-transform hover:-translate-y-1 hover:bg-[#ffd60a]"
+                aria-label={`Call ${portfolioData.phone}`}
+                className="group flex cursor-pointer items-center justify-between rounded-2xl border-2 border-[#0e1030] bg-[#f1f2ff] p-5 text-[#0e1030] shadow-[5px_5px_0_#0e1030] transition-all duration-200 hover:-translate-y-1 hover:bg-[#ffd60a] hover:shadow-[7px_7px_0_#0e1030] active:translate-y-0"
               >
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-[#2f2bff]" />
@@ -266,7 +303,7 @@ export const Contact = () => {
                   </span>
                 </div>
                 <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </HoverTarget>
+              </a>
 
               {/* Location Pill Card */}
               <div className="group flex items-center justify-between rounded-2xl border-2 border-[#0e1030] bg-[#f1f2ff] p-5 text-[#0e1030] shadow-[5px_5px_0_#0e1030]">

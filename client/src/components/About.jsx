@@ -96,11 +96,15 @@ export const About = () => {
             >
               <TiltCard className="h-full">
                 <div
-                  className={`flex h-full min-h-[14rem] flex-col justify-between rounded-[2rem] border-2 border-[#0e1030] p-6 shadow-[6px_6px_0_#0e1030] ${
+                  className={`flex h-full min-h-[14rem] flex-col justify-between rounded-[2rem] border-2 border-[#0e1030] p-6 shadow-[6px_6px_0_#0e1030] overflow-hidden ${
                     CARD_COLORS[i % CARD_COLORS.length]
                   }`}
                 >
-                  <dd className="font-display text-[clamp(2.6rem,5.5vw,4.2rem)] font-black leading-none tracking-tight tabular-nums">
+                  <dd className={`font-display font-black leading-none tracking-tight break-words ${
+                    stat.value.length > 4 
+                      ? 'text-[clamp(1.75rem,3.2vw,2.5rem)]' 
+                      : 'text-[clamp(2.6rem,5.5vw,4.2rem)] tabular-nums'
+                  }`}>
                     {stat.value}
                   </dd>
                   <dt className="mt-6 text-lg font-semibold leading-snug">

@@ -71,7 +71,8 @@ export default function App() {
           items={[
             'Flutter',
             'Dart',
-            'Firebase',
+            'Python',
+            'FastAPI',
             'HTML',
             'CSS',
             'UI/UX',
@@ -89,9 +90,11 @@ export default function App() {
 
         <Marquee
           items={[
+            'Founder @ NO FOUND AI Tech Solution',
             'Flutter Developer',
             'Visyom AI',
-            '1 Year Experience',
+            'AI-Powered Solutions',
+            'Python & FastAPI',
             'Cross-Platform Apps',
             'Figma to Flutter',
             'Google Play Store'

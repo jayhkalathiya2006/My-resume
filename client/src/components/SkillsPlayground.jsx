@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Move, Sparkles } from 'lucide-react';
+import { ArrowRight, Move } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { HoverTarget } from '../context/CursorContext';
+import { TechIcon } from './TechIcon';
 
 export const SkillsPlayground = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -123,8 +124,8 @@ export const SkillsPlayground = () => {
                 label={tech.category}
                 className="group relative flex flex-col items-center justify-center rounded-2xl border-2 border-[#f1f2ff]/20 bg-[#1d19c9]/60 p-4 transition-all duration-300 hover:border-[#ffd60a] hover:bg-[#1d19c9] hover:shadow-[4px_4px_0_#ffd60a]"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f1f2ff]/10 text-[#ffd60a] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-                  <Sparkles className="h-6 w-6 text-[#ffd60a] group-hover:text-[#ff5ca8]" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f1f2ff]/10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                  <TechIcon name={tech.name} className="h-6 w-6" />
                 </div>
                 <span className="mt-2 text-center font-display text-xs font-semibold text-[#f1f2ff] group-hover:text-[#ffd60a]">
                   {tech.name}

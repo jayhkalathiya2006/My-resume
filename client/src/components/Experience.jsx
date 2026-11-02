@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, MapPin, Calendar, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, MapPin, Calendar, CheckCircle2, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { HoverTarget } from '../context/CursorContext';
 
@@ -104,7 +104,7 @@ export const Experience = () => {
             </h2>
 
             <p className="mt-6 max-w-xl text-xl text-[#4a4e78] sm:text-2xl font-medium">
-              Real-world mobile and web application development: delivering high-quality, responsive cross-platform applications at Visyom AI.
+              Venture founder & industry development: building intelligent AI solutions at NO FOUND AI Tech Solution and high-performance cross-platform applications at Visyom AI.
             </p>
 
             {portfolioData.experiences.length > 1 && (
@@ -121,50 +121,77 @@ export const Experience = () => {
               key={exp.id}
               as="article"
               variant="link"
-              className={`exp-card relative flex flex-col rounded-[2rem] border-2 border-[#0e1030] p-6 shadow-[8px_8px_0_#0e1030] sm:p-8 lg:w-[min(38rem,48vw)] lg:shrink-0 ${exp.cardColor}`}
+              className={`exp-card relative flex flex-col rounded-[2rem] border-2 border-[#0e1030] p-5 shadow-[6px_6px_0_#0e1030] sm:p-6 lg:w-[min(32rem,40vw)] lg:shrink-0 ${exp.cardColor}`}
             >
               {/* Header row with badge & period */}
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-[#0e1030] bg-[#ffd60a] font-display font-black text-xl text-[#0e1030]">
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-[#0e1030] bg-[#0e1030] font-display font-black text-lg text-[#ffd60a]">
                   {exp.id}
                 </div>
 
-                <div className="inline-flex items-center gap-1.5 rounded-full border-2 border-[#0e1030] bg-[#f1f2ff] px-4 py-1.5 font-display text-xs font-bold text-[#0e1030] shadow-[2px_2px_0_#0e1030]">
-                  <Calendar className="h-3.5 w-3.5" />
-                  <span>{exp.period}</span>
+                <div className="flex flex-wrap items-center gap-2">
+                  {exp.type && (
+                    <span className="rounded-full border-2 border-[#0e1030] bg-[#f1f2ff] px-2.5 py-0.5 font-display text-[11px] font-bold text-[#0e1030] shadow-[2px_2px_0_#0e1030]">
+                      {exp.type}
+                    </span>
+                  )}
+                  <div className="inline-flex items-center gap-1 rounded-full border-2 border-[#0e1030] bg-[#f1f2ff] px-3 py-0.5 font-display text-[11px] font-bold text-[#0e1030] shadow-[2px_2px_0_#0e1030]">
+                    <Calendar className="h-3 w-3" />
+                    <span>{exp.period}</span>
+                  </div>
                 </div>
               </div>
 
               {/* Title & Organization */}
-              <h3 className="mt-6 font-display text-2xl font-black leading-tight tracking-tight sm:text-3xl">
+              <h3 className="mt-4 font-display text-xl font-black leading-tight tracking-tight sm:text-2xl">
                 {exp.role}
               </h3>
 
-              <div className="mt-2 flex items-center gap-2 text-base font-semibold opacity-85">
-                <span>{exp.company}</span>
+              <div className="mt-1.5 flex items-center gap-2 text-sm font-semibold opacity-85">
+                {exp.companyUrl ? (
+                  <a
+                    href={exp.companyUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    aria-label={`Open LinkedIn page for ${exp.company}`}
+                    className="group/link inline-flex items-center gap-1 font-bold underline decoration-2 underline-offset-2 transition-colors hover:text-[#2f2bff] hover:decoration-[#2f2bff]"
+                  >
+                    <span>{exp.company}</span>
+                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                  </a>
+                ) : (
+                  <span className="font-bold underline decoration-2">{exp.company}</span>
+                )}
                 <span>•</span>
-                <span className="flex items-center gap-1 text-sm font-medium">
-                  <MapPin className="h-3.5 w-3.5" />
+                <span className="flex items-center gap-1 text-xs font-medium">
+                  <MapPin className="h-3 w-3" />
                   {exp.location}
                 </span>
               </div>
 
+              {exp.overview && (
+                <p className="mt-3 text-xs font-semibold leading-relaxed opacity-95 rounded-xl border border-current/20 bg-current/5 p-2.5">
+                  {exp.overview}
+                </p>
+              )}
+
               {/* Bullet Points */}
-              <ul className="mt-6 space-y-3">
+              <ul className="mt-3.5 space-y-1.5">
                 {exp.description.map((bullet, bIdx) => (
-                  <li key={bIdx} className="flex items-start gap-2.5 text-base leading-relaxed opacity-90 font-medium">
-                    <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#2f2bff]" />
+                  <li key={bIdx} className="flex items-start gap-2 text-xs sm:text-[13px] leading-relaxed opacity-90 font-medium">
+                    <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#2f2bff]" />
                     <span>{bullet}</span>
                   </li>
                 ))}
               </ul>
 
               {/* Tech Stack Pills */}
-              <div className="mt-8 flex flex-wrap gap-2 pt-4 border-t-2 border-current/20">
+              <div className="mt-5 flex flex-wrap gap-1.5 pt-3 border-t-2 border-current/20">
                 {exp.tech.map((t) => (
                   <span
                     key={t}
-                    className={`rounded-full border-2 border-[#0e1030] px-3.5 py-1 text-xs font-bold shadow-[2px_2px_0_#0e1030] ${exp.tagColor}`}
+                    className={`rounded-full border-2 border-[#0e1030] px-2.5 py-0.5 text-[11px] font-bold shadow-[2px_2px_0_#0e1030] ${exp.tagColor}`}
                   >
                     {t}
                   </span>

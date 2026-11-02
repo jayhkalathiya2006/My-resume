@@ -100,10 +100,17 @@ export const Projects = () => {
                   <span className="absolute inset-0 origin-left scale-x-0 bg-[#0e1030] transition-transform duration-300 ease-out group-hover:scale-x-100" />
 
                   <HoverTarget
-                    as="div"
+                    as={hasLive ? 'a' : 'div'}
+                    {...(hasLive
+                      ? {
+                          href: proj.link,
+                          target: '_blank',
+                          rel: 'noreferrer'
+                        }
+                      : {})}
                     variant="view"
-                    label={hasLive ? 'Visit' : proj.github ? 'Code' : 'Private'}
-                    className="relative z-10 flex flex-col justify-between gap-6 p-6 transition-colors duration-300 group-hover:text-[#f1f2ff] sm:p-10 lg:flex-row lg:items-center"
+                    label={hasLive ? 'Open Play Store' : proj.github ? 'Code' : 'Private'}
+                    className="relative z-10 flex flex-col justify-between gap-6 p-6 transition-colors duration-300 group-hover:text-[#f1f2ff] sm:p-10 lg:flex-row lg:items-center cursor-pointer"
                   >
                     {/* Left Details */}
                     <div className="lg:max-w-md">
@@ -163,26 +170,20 @@ export const Projects = () => {
                       ) : (
                         <>
                           {proj.github && (
-                            <a
-                              href={proj.github}
-                              target="_blank"
-                              rel="noreferrer"
+                            <span
                               aria-label={`GitHub repository for ${proj.title}`}
                               className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#0e1030] bg-[#f1f2ff] text-[#0e1030] shadow-[3px_3px_0_#0e1030] transition-transform hover:scale-110 hover:bg-[#ffd60a]"
                             >
                               <GithubIcon className="h-5 w-5" />
-                            </a>
+                            </span>
                           )}
                           {proj.link && (
-                            <a
-                              href={proj.link}
-                              target="_blank"
-                              rel="noreferrer"
-                              aria-label={`Live site for ${proj.title}`}
+                            <span
+                              aria-label={`Open link for ${proj.title}`}
                               className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#0e1030] bg-[#2f2bff] text-[#f1f2ff] shadow-[3px_3px_0_#0e1030] transition-transform hover:scale-110 hover:bg-[#ff5ca8]"
                             >
                               <ArrowUpRight className="h-6 w-6" />
-                            </a>
+                            </span>
                           )}
                         </>
                       )}

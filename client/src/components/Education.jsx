@@ -20,7 +20,7 @@ export const Education = () => {
         </motion.h2>
 
         <p className="mt-6 max-w-2xl text-xl text-[#4a4e78] sm:text-2xl font-medium">
-          Bachelor of Computer Applications (BCA): foundational computer science theory paired with hands-on cross-platform mobile and frontend application development.
+          Master of Computer Applications (MCA) at Parul University paired with hands-on cross-platform mobile and frontend application development.
         </p>
 
         {/* Degree Cards */}
@@ -36,7 +36,7 @@ export const Education = () => {
               <TiltCard className="h-full">
                 <article
                   className={`group flex h-full flex-col rounded-[2rem] border-2 border-[#0e1030] p-7 shadow-[8px_8px_0_#0e1030] sm:p-10 ${
-                    idx === 0 ? 'bg-[#ffd60a] text-[#0e1030]' : 'bg-[#ff5ca8] text-[#0e1030]'
+                    idx === 0 ? 'bg-[#ffd60a] text-[#0e1030]' : 'bg-[#f1f2ff] text-[#0e1030]'
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -48,9 +48,18 @@ export const Education = () => {
                       )}
                     </span>
 
-                    <span className="rounded-full border-2 border-[#0e1030] bg-[#f1f2ff] px-4 py-1.5 font-display text-xs font-bold text-[#0e1030] shadow-[2px_2px_0_#0e1030]">
-                      {edu.period}
-                    </span>
+                    <div className="flex flex-wrap items-center gap-2">
+                      {edu.status && (
+                        <span className={`rounded-full border-2 border-[#0e1030] px-3 py-1 font-display text-xs font-bold shadow-[2px_2px_0_#0e1030] ${
+                          edu.isCurrent ? 'bg-[#ff5ca8] text-[#0e1030]' : 'bg-[#2f2bff] text-[#f1f2ff]'
+                        }`}>
+                          {edu.status}
+                        </span>
+                      )}
+                      <span className="rounded-full border-2 border-[#0e1030] bg-[#f1f2ff] px-4 py-1 font-display text-xs font-bold text-[#0e1030] shadow-[2px_2px_0_#0e1030]">
+                        {edu.period}
+                      </span>
+                    </div>
                   </div>
 
                   <h3 className="mt-8 font-display text-2xl font-black leading-tight tracking-tight sm:text-3xl">

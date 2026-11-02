@@ -6,43 +6,44 @@ export const portfolioData = {
   location: "Surat, Gujarat, India",
   phone: "+91 9054181276",
   email: "jayhkalathiya2006@gmail.com",
-  company: "Visyom AI",
-  experience: "1 Year",
-  educationDegree: "Bachelor of Computer Applications (BCA)",
-  announcement: "⚡ Flutter & Mobile Application Developer | Visyom AI",
-  intro: "Results-driven Flutter Developer with 1 year of professional experience at Visyom AI, specializing in cross-platform mobile application development, frontend development, and UI/UX implementation.",
+  company: "NO FOUND AI Tech Solution & Visyom AI",
+  experience: "1+ Years",
+  educationDegree: "Master of Computer Applications (MCA)",
+  announcement: "⚡ Founder @ NO FOUND AI Tech Solution | Flutter Developer @ Visyom AI",
+  intro: "Founder of NO FOUND AI Tech Solution and results-driven Flutter Developer with 1 year of professional experience at Visyom AI, specializing in intelligent AI-powered software solutions, cross-platform mobile applications, and modern digital products.",
   rotatingRoles: [
+    "Founder @ NO FOUND AI Tech Solution",
     "Flutter & Dart",
+    "Python & FastAPI",
+    "AI Software Solutions",
     "Mobile Applications",
-    "Firebase & APIs",
-    "UI/UX & Figma",
-    "AI Dev Tools"
+    "UI/UX & Figma"
   ],
   about: {
-    intro: "Results-driven Flutter Developer with 1 year of professional experience at Visyom AI, specializing in cross-platform mobile application development, frontend development, and UI/UX implementation. Skilled in Flutter, Dart, Firebase, HTML, CSS, and AI-powered development tools. Experienced in developing real-world applications, implementing modern interfaces, integrating third-party services, and delivering high-quality mobile applications.",
-    philosophy: "A high-quality mobile application is built on thoughtful UI/UX, responsive layouts, and rock-solid architecture. I turn complex Figma designs into fluid cross-platform Flutter experiences with clean Dart code and seamless API integrations.",
+    intro: "Founder of NO FOUND AI Tech Solution and professional Flutter Developer at Visyom AI, building intelligent AI-powered software solutions and production-grade mobile applications. Skilled in Flutter, Dart, Python FastAPI, AI Agents & Chatbots, AI Automation, Web Technologies, and modern UI/UX implementation. Leading end-to-end digital product development from proprietary AI SaaS solutions to client enterprise software.",
+    philosophy: "Modern technology thrives at the intersection of intelligent AI systems, thoughtful UI/UX, and rock-solid cross-platform architectures. At NO FOUND AI Tech Solution and Visyom AI, I turn ambitious concepts into intelligent, scalable digital products and fluid mobile experiences.",
     stats: [
-      { value: "1+", label: "Year Experience at Visyom AI" },
+      { value: "Founder", label: "NO FOUND AI Tech Solution" },
+      { value: "1 Year", label: "Experience at Visyom AI" },
       { value: "4+", label: "Real-World Mobile & Web Projects" },
-      { value: "100%", label: "Responsive UI & Figma-to-Flutter" },
-      { value: "Flutter", label: "Cross-Platform Mobile Application Specialist" }
+      { value: "Flutter", label: "Cross-Platform & AI Integration" }
     ],
     highlights: [
       {
-        title: "Flutter & Mobile Development",
+        title: "Entrepreneurship & AI Solutions (NO FOUND AI Tech Solution)",
+        desc: "Founding NO FOUND AI Tech Solution to deliver intelligent software solutions, AI automation, AI agents, SaaS products, and custom digital services under a hybrid business model."
+      },
+      {
+        title: "Flutter & Cross-Platform Development",
         desc: "Developing cross-platform mobile applications using Flutter and Dart with reactive state management and high performance."
       },
       {
-        title: "UI/UX & Figma-to-Flutter",
-        desc: "Converting Figma prototypes into responsive, pixel-perfect Flutter interfaces with smooth transitions and interactive micro-animations."
+        title: "AI Integration & Automation",
+        desc: "Planning, designing, and integrating AI agents, automated workflows, and AI-powered tools into web, CRM/ERP, and mobile platforms."
       },
       {
-        title: "Firebase & API Integration",
-        desc: "Integrating Firebase authentication, cloud databases, notifications, and third-party RESTful services into production workflows."
-      },
-      {
-        title: "Testing, Debugging & Store Deployment",
-        desc: "Rigorous testing, debugging, Google AdMob monetization integration, and deploying production builds to Google Play Store."
+        title: "UI/UX & Production Store Deployment",
+        desc: "Translating Figma designs into responsive interfaces, integrating monetization with Google AdMob, and managing Google Play Store releases."
       }
     ]
   },
@@ -52,6 +53,7 @@ export const portfolioData = {
       title: "Programming",
       tags: [
         { name: "Dart", bg: "bg-[#ffd60a] text-[#0e1030]" },
+        { name: "Python", bg: "bg-[#38bdf8] text-[#0e1030]" },
         { name: "HTML", bg: "bg-[#f1f2ff] text-[#0e1030]" },
         { name: "CSS", bg: "bg-[#ff5ca8] text-[#0e1030]" }
       ]
@@ -67,7 +69,8 @@ export const portfolioData = {
       id: "backend",
       title: "Backend & Database",
       tags: [
-        { name: "Firebase", bg: "bg-[#ffd60a] text-[#0e1030]" }
+        { name: "Python", bg: "bg-[#ffd60a] text-[#0e1030]" },
+        { name: "FastAPI", bg: "bg-[#ff5ca8] text-[#0e1030]" }
       ]
     },
     {
@@ -109,7 +112,8 @@ export const portfolioData = {
   techGridIcons: [
     { name: "Flutter", category: "Framework" },
     { name: "Dart", category: "Programming" },
-    { name: "Firebase", category: "Backend" },
+    { name: "Python", category: "Language" },
+    { name: "FastAPI", category: "Backend" },
     { name: "HTML", category: "Frontend" },
     { name: "CSS", category: "Frontend" },
     { name: "Mobile Dev", category: "Development" },
@@ -121,17 +125,43 @@ export const portfolioData = {
     { name: "AI Dev Tools", category: "Tools" },
     { name: "Google AdMob", category: "Tools" },
     { name: "App Testing", category: "Quality" },
-    { name: "Debugging", category: "Quality" },
     { name: "Play Store", category: "Deployment" }
   ],
   experiences: [
     {
       id: 1,
+      role: "Founder & AI Technology Developer",
+      company: "NO FOUND AI Tech Solution",
+      companyUrl: "https://www.linkedin.com/company/no-found007",
+      location: "Surat, Gujarat, India",
+      period: "Present",
+      type: "Founder / Entrepreneurship Experience",
+      current: true,
+      badge: "Own Venture",
+      cardColor: "bg-[#ffd60a] text-[#0e1030]",
+      tagColor: "bg-[#2f2bff] text-[#f1f2ff]",
+      overview: "AI-based IT & software development company operating on a hybrid model (client services + own AI products), specializing in intelligent software solutions, AI-powered applications, automation, and custom digital products.",
+      description: [
+        "Planning and developing AI-powered software solutions.",
+        "Managing end-to-end software development projects.",
+        "Building mobile and web applications.",
+        "Exploring and integrating AI technologies.",
+        "Developing business automation solutions.",
+        "Planning and building proprietary AI-based SaaS products.",
+        "Managing product development and technical strategy."
+      ],
+      tech: ["AI Solutions", "AI Agents", "Automation", "Flutter", "Web Apps", "CRM/ERP", "SaaS", "UI/UX"]
+    },
+    {
+      id: 2,
       role: "Flutter Developer",
       company: "Visyom AI",
+      companyUrl: "https://in.linkedin.com/company/visyom-ai",
       location: "Surat, Gujarat, India",
       period: "1 Year",
-      current: true,
+      type: "Professional Experience",
+      current: false,
+      badge: "Industry Experience",
       cardColor: "bg-[#f1f2ff] text-[#0e1030]",
       tagColor: "bg-[#ffd60a] text-[#0e1030]",
       description: [
@@ -164,8 +194,9 @@ export const portfolioData = {
         "Game testing and bug fixing.",
         "Google Play Store deployment."
       ],
-      isPrivate: true,
-      highlight: "Sudoku gameplay with AdMob integration & Play Store deployment"
+      link: "https://play.google.com/store/apps/details?id=com.pencil.puzzle.game&hl=en_IN",
+      isPrivate: false,
+      highlight: "Live on Play Store with AdMob integration & engaging puzzles"
     },
     {
       id: 2,
@@ -238,10 +269,21 @@ export const portfolioData = {
   education: [
     {
       id: 1,
+      degree: "Master of Computer Applications (MCA)",
+      institution: "Parul University",
+      period: "2026 – 2028",
+      status: "Currently Pursuing",
+      isCurrent: true,
+      description: "Advanced studies in computer applications, software engineering principles, system architecture, enterprise software solutions, and mobile/cloud computing technologies."
+    },
+    {
+      id: 2,
       degree: "Bachelor of Computer Applications (BCA)",
-      institution: "Bachelor of Computer Applications",
-      period: "BCA Graduate",
-      description: "Solid computer science and software development foundations, including object-oriented programming, data structures, web technologies, and mobile application engineering."
+      institution: "Previous Qualification",
+      period: "Completed",
+      status: "Completed",
+      isCurrent: false,
+      description: "Solid foundational computer science and software development principles, including object-oriented programming, data structures, web technologies, and mobile application engineering."
     }
   ],
   learningPillars: [
@@ -266,11 +308,11 @@ export const portfolioData = {
     headingWords: ["Got", "something", "worth", "building?"],
     subtitle: "Tell me what you're trying to build or ship. I read and respond to every message myself.",
     openTo: [
+      "Founder / Leadership roles",
       "Flutter Developer roles",
+      "AI & Python FastAPI Development",
       "Mobile Application Development",
-      "Frontend Development",
-      "UI/UX Implementation",
-      "Firebase & API Integration"
+      "UI/UX Implementation"
     ]
   }
 };

@@ -56,18 +56,72 @@ const profileData = {
   location: "Surat, Gujarat, India",
   phone: "+91 9054181276",
   email: "jayhkalathiya2006@gmail.com",
-  company: "Visyom AI",
-  experience: "1 Year",
-  status: "Available for Flutter & Mobile Development Roles",
-  summary: "Results-driven Flutter Developer with 1 year of professional experience at Visyom AI, specializing in cross-platform mobile application development, frontend development, and UI/UX implementation. Skilled in Flutter, Dart, Firebase, HTML, CSS, and AI-powered development tools. Experienced in developing real-world applications, implementing modern interfaces, integrating third-party services, and delivering high-quality mobile applications.",
+  company: "NO FOUND AI Tech Solution & Visyom AI",
+  experience: "1+ Years",
+  status: "Founder @ NO FOUND AI Tech Solution | Available for AI & Flutter Roles",
+  summary: "Founder of NO FOUND AI Tech Solution and professional Flutter Developer at Visyom AI, building intelligent AI-powered software solutions and production-grade mobile applications. Skilled in Flutter, Dart, Python, FastAPI, AI Agents & Chatbots, AI Automation, Web Technologies, and modern UI/UX implementation.",
+  experiences: [
+    {
+      id: 1,
+      role: "Founder & AI Technology Developer",
+      company: "NO FOUND AI Tech Solution",
+      companyUrl: "https://www.linkedin.com/company/no-found007",
+      location: "Surat, Gujarat, India",
+      period: "Present",
+      type: "Founder / Entrepreneurship Experience",
+      overview: "AI-based IT & software development company operating on a hybrid model (client services + own AI products).",
+      description: [
+        "Planning and developing AI-powered software solutions.",
+        "Managing end-to-end software development projects.",
+        "Building mobile and web applications.",
+        "Exploring and integrating AI technologies.",
+        "Developing business automation solutions.",
+        "Planning and building proprietary AI-based SaaS products.",
+        "Managing product development and technical strategy."
+      ],
+      tech: ["AI Solutions", "AI Agents", "Automation", "Flutter", "Web Apps", "CRM/ERP", "SaaS", "UI/UX"]
+    },
+    {
+      id: 2,
+      role: "Flutter Developer",
+      company: "Visyom AI",
+      companyUrl: "https://in.linkedin.com/company/visyom-ai",
+      location: "Surat, Gujarat, India",
+      period: "1 Year",
+      type: "Professional Experience",
+      description: [
+        "Developing cross-platform mobile applications using Flutter and Dart.",
+        "Implementing modern and responsive UI/UX designs.",
+        "Converting Figma designs into functional Flutter interfaces.",
+        "Integrating Firebase and third-party services.",
+        "Testing applications and fixing bugs.",
+        "Improving application performance and user experience.",
+        "Using AI-powered development tools for efficient development.",
+        "Working on real-world mobile and web application projects."
+      ],
+      tech: ["Flutter", "Dart", "Firebase", "UI/UX", "API Integration", "AI Tools"]
+    }
+  ],
   education: [
     {
       id: 1,
+      degree: "Master of Computer Applications (MCA)",
+      institution: "Parul University",
+      period: "2026 – 2028",
+      status: "Currently Pursuing",
+      isCurrent: true,
+      description: "Advanced studies in computer applications, system architecture, advanced algorithms, and enterprise software engineering.",
+      badge: "Currently Pursuing"
+    },
+    {
+      id: 2,
       degree: "Bachelor of Computer Applications (BCA)",
-      institution: "Bachelor of Computer Applications",
-      period: "BCA Graduate",
-      description: "Solid academic foundation in computer applications, programming principles, software development, data structures, and mobile interface design.",
-      badge: "BCA"
+      institution: "Previous Qualification",
+      period: "Completed",
+      status: "Completed",
+      isCurrent: false,
+      description: "Solid foundational computer science and software development principles, including object-oriented programming, data structures, web technologies, and mobile applications.",
+      badge: "Completed"
     }
   ],
   stats: [
@@ -80,7 +134,7 @@ const profileData = {
     {
       id: "programming",
       title: "Programming",
-      tags: ["Dart", "HTML", "CSS"]
+      tags: ["Dart", "Python", "HTML", "CSS"]
     },
     {
       id: "framework",
@@ -90,7 +144,7 @@ const profileData = {
     {
       id: "backend",
       title: "Backend & Database",
-      tags: ["Firebase"]
+      tags: ["Python", "FastAPI"]
     },
     {
       id: "development",
@@ -129,8 +183,9 @@ const profileData = {
         "Game testing and bug fixing.",
         "Google Play Store deployment."
       ],
-      isPrivate: true,
-      highlight: "Sudoku gameplay with AdMob integration & Play Store deployment"
+      link: "https://play.google.com/store/apps/details?id=com.pencil.puzzle.game&hl=en_IN",
+      isPrivate: false,
+      highlight: "Live on Google Play Store with AdMob integration & engaging puzzles"
     },
     {
       id: 2,
